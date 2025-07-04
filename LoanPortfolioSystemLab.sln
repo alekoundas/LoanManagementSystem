@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{5566EB38-BF0E-4C58-AD00-4C7A0FC5D10A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{C9335B1C-55B0-4D2B-9832-F39EB9C9E861}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{C9335B1C-55B0-4D2B-9832-F39EB9C9E861}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular", "Angular\Angular.csproj", "{A29E3EC6-7E29-41DA-90E8-D1A230087EA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C9335B1C-55B0-4D2B-9832-F39EB9C9E861}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9335B1C-55B0-4D2B-9832-F39EB9C9E861}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9335B1C-55B0-4D2B-9832-F39EB9C9E861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A29E3EC6-7E29-41DA-90E8-D1A230087EA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29E3EC6-7E29-41DA-90E8-D1A230087EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29E3EC6-7E29-41DA-90E8-D1A230087EA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29E3EC6-7E29-41DA-90E8-D1A230087EA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
