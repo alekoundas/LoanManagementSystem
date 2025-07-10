@@ -1,0 +1,12 @@
+<div *ngIf="loading">Loading Customer Details Please Hold...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+<div *ngIf="customer && !loading && !error">
+  <h2>{{ customer.firstName }} {{ customer.lastName }}</h2>
+  <p><strong>Email:</strong> {{ customer.email }}</p>
+  <p><strong>Phone:</strong> {{ customer.phoneNumber }}</p>
+  <p><strong>Address:</strong> {{ customer.address }}, {{ customer.city }}, {{ customer.state }} {{ customer.zipCode }}</p>
+  <p><strong>Date of Birth:</strong> {{ customer.dateOfBirth | date }}</p>
+  <p><strong>Credit Score:</strong> {{ customer.creditScore }}</p>
+  <p><strong>Registered Since:</strong> {{ customer.registrationDate | date }} ({{ customer.registrationDate | yearsSince }} years)</p>
+  <button (click)="goToLoans()">View Loans</button>
+</div>

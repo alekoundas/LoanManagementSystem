@@ -1,0 +1,8 @@
+.selected {
+  background-color: #ffff99;
+  text-decoration: underline;
+}
+
+.error {
+  color: red;
+}

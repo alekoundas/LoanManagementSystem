@@ -1,0 +1,15 @@
+<div *ngIf="loading">Loading loans...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+<div *ngIf="!loading && !error">
+  <h2>{{ customerId ? "Customer Loans" : "All Loans" }}</h2>
+  <ul>
+    <li *ngFor="let loan of loans">
+      <a [routerLink]="['/loans', loan.loanId, 'details']">
+        Loan ID: {{ loan.loanId }} -
+        {{ loan.loanProduct?.productName || "Unknown Product" }} ({{
+          loan.approvedAmount | currency
+        }})
+      </a>
+    </li>
+  </ul>
+</div>

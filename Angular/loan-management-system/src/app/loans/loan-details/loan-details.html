@@ -1,0 +1,21 @@
+<div *ngIf="loading">Loading loan details...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+<div *ngIf="loan && !loading && !error">
+  <h2>Loan Details - ID: {{ loan.loanId }}</h2>
+  <p><strong>Product:</strong> {{ loan.loanProduct?.productName || "N/A" }}</p>
+  <p><strong>Approved Amount:</strong> {{ loan.approvedAmount | currency }}</p>
+  <p><strong>Current Balance:</strong> {{ loan.currentBalance | currency }}</p>
+  <p><strong>Interest Rate:</strong> {{ loan.interestRate }}%</p>
+  <p><strong>Disbursement Date:</strong> {{ loan.disbursementDate | date }}</p>
+  <p><strong>Maturity Date:</strong> {{ loan.maturityDate | date }}</p>
+  <p><strong>Term:</strong> {{ loan.originalTermMonths }} months</p>
+  <p><strong>Status:</strong> {{ loan.loanStatus }}</p>
+  <p>
+    <strong>Last Payment:</strong>
+    {{ loan.lastPaymentDate ?? defaultDate | date }}
+  </p>
+  <p>
+    <strong>Next Payment Due:</strong>
+    {{ loan.nextPaymentDueDate | date }}
+  </p>
+</div>

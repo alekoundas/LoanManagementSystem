@@ -1,0 +1,14 @@
+<div *ngIf="loading">Loading customers...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+<div *ngIf="!loading && !error">
+  <app-search-bar (search)="onSearch($event)"></app-search-bar>
+  <div *ngFor="let customer of filteredCustomers; let i = index"
+       (click)="selectCustomer(customer.customerId)"
+       [class.selected]="selectedCustomerId === customer.customerId">
+    <span [appColor]="i">{{ customer.firstName }}</span> {{ customer.lastName }}
+    <span *ngIf="isLongTermCustomer(customer.registrationDate)" title="Important">
+      <i class="fas fa-exclamation"></i>
+    </span>
+    - <span>{{ customer.registrationDate | yearsSince }} years</span>
+  </div>
+</div>
