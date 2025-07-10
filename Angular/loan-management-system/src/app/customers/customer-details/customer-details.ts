@@ -2,13 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../../services/customer';
 import { Customer } from '../../models/customer';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-customer-details',
   templateUrl: './customer-details.html',
   styleUrls: ['./customer-details.css'],
-  providers: [CustomerService, HttpClient],
   standalone: false,
 })
 export class CustomerDetailsComponent implements OnInit {
@@ -45,7 +43,7 @@ export class CustomerDetailsComponent implements OnInit {
 
   goToLoans(): void {
     if (this.customer) {
-      this.router.navigate(['/loans/customer', this.customer.customerID]);
+      this.router.navigate(['/loans/customer', this.customer.customerId]);
     }
   }
 }

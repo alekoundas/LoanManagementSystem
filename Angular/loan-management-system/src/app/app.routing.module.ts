@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, RouterOutlet, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home';
 import { PageNotFoundComponent } from './page-not-found/page-not-found';
 import { AuthGuard } from './guards/auth-guard';
-import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,7 +22,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), CommonModule],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

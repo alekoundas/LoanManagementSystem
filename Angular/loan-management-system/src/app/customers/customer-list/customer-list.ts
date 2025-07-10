@@ -2,15 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../services/customer';
 import { Customer } from '../../models/customer';
 import { SearchBarComponent } from '../search-bar/search-bar';
-import { HttpClient, HttpHandler } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.html',
   styleUrls: ['./customer-list.css'],
   standalone: false,
-  providers: [CustomerService, HttpClient],
 })
 export class CustomerListComponent implements OnInit {
   customers: Customer[] = [];
@@ -19,11 +16,7 @@ export class CustomerListComponent implements OnInit {
   loading: boolean = false;
   error: string | null = null;
 
-  constructor(
-    private customerService: CustomerService,
-    private readonly router: Router,
-    private readonly route: ActivatedRoute
-  ) {}
+  constructor(private customerService: CustomerService) {}
 
   ngOnInit(): void {
     this.loadCustomers();
@@ -46,12 +39,6 @@ export class CustomerListComponent implements OnInit {
 
   selectCustomer(id: number): void {
     this.selectedCustomerId = id;
-    this.navigateToCustomerPage(id);
-  }
-  navigateToCustomerPage(id: number) {
-    this.router.navigate(['/customers/' + id.toString()], {
-      relativeTo: this.route,
-    });
   }
 
   isLongTermCustomer(registrationDate: string): boolean {

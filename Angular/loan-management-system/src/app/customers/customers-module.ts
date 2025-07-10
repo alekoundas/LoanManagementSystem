@@ -7,8 +7,6 @@ import { SearchBarComponent } from './search-bar/search-bar';
 import { FormsModule } from '@angular/forms';
 import { YearsSincePipe } from '../pipes/years-since-pipe';
 import { ColorDirective } from '../directives/color';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,17 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     YearsSincePipe,
     ColorDirective,
   ],
-  imports: [
-    CustomersRoutingModule,
-    FormsModule,
-    DatePipe,
-    CommonModule,
-    HttpClientModule,
-  ],
-  exports: [
-    SearchBarComponent,
-    CustomerListComponent,
-    CustomerDetailsComponent,
-  ],
+  imports: [CustomersRoutingModule, FormsModule, DatePipe],
+  exports: [SearchBarComponent],
 })
 export class CustomersModule {}
