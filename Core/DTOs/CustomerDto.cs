@@ -6,5 +6,6 @@
         public string FullName { get; set; }
         public string Email { get; set; }
         public int? CreditScore { get; set; }
+        public DateTime RegistrationDate { get; set; }
     }
 }

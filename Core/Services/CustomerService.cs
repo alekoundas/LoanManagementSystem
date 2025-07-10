@@ -22,7 +22,8 @@ namespace Core.Services
                 CustomerID = c.CustomerID,
                 FullName = $"{c.FirstName} {c.LastName}",
                 Email = c.Email,
-                CreditScore = c.CreditScore
+                CreditScore = c.CreditScore,
+                RegistrationDate = c.RegistrationDate,
             });
         }
 
