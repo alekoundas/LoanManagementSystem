@@ -1,5 +1,5 @@
 export interface Customer {
-  customerId: number;
+  customerID: number;
   firstName: string;
   lastName: string;
   dateOfBirth: string;
@@ -11,4 +11,5 @@ export interface Customer {
   zipCode: string;
   creditScore: number;
   registrationDate: string;
+  fullName: string;
 }
