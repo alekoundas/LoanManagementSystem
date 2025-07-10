@@ -323,8 +323,12 @@
     </div>
   </div>
 </main> -->
-<app-home></app-home>
-<app-search-bar></app-search-bar>
+<router-outlet></router-outlet>
+<nav>
+  <a routerLink="/home">Home</a> | <a routerLink="/customers">Customers</a> |
+  <a routerLink="/loans">Loans</a> |
+  <a routerLink="/admin">Admin</a>
+</nav>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->

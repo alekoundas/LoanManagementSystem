@@ -2,13 +2,22 @@
 <div *ngIf="error" class="error">{{ error }}</div>
 <div *ngIf="!loading && !error">
   <app-search-bar (search)="onSearch($event)"></app-search-bar>
-  <div *ngFor="let customer of filteredCustomers; let i = index"
-       (click)="selectCustomer(customer.customerId)"
-       [class.selected]="selectedCustomerId === customer.customerId">
+  <div
+    *ngFor="let customer of filteredCustomers; let i = index"
+    (click)="selectCustomer(customer.customerID)"
+    [class.selected]="selectedCustomerId === customer.customerID"
+  >
     <span [appColor]="i">{{ customer.firstName }}</span> {{ customer.lastName }}
-    <span *ngIf="isLongTermCustomer(customer.registrationDate)" title="Important">
+    <span
+      *ngIf="isLongTermCustomer(customer.registrationDate)"
+      title="Important"
+    >
       <i class="fas fa-exclamation"></i>
     </span>
-    - <span>{{ customer.registrationDate | yearsSince }} years</span>
+    <span
+      >Customer : {{ customer.fullName }} ,
+      {{ customer.registrationDate | yearsSince }} years since
+      Registration</span
+    >
   </div>
 </div>
