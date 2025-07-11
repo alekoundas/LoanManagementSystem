@@ -39,7 +39,9 @@ namespace Infrastructure.DataAccess
             using (var connection = new SqlConnection(_connectionString))
             {
                 await connection.OpenAsync();
-                var command = new SqlCommand("SELECT * FROM CoreLoan.Loans", connection);
+                var command = new SqlCommand("SELECT * FROM CoreLoan.Loans WHERE CustomerID = @Id", connection);
+                command.Parameters.AddWithValue("@Id", id);
+
                 using (var reader = await command.ExecuteReaderAsync())
                 {
                     while (await reader.ReadAsync())
