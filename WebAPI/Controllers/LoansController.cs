@@ -30,6 +30,14 @@ namespace WebAPI.Controllers
             return Ok(loan);
         }
 
+        [HttpGet("customer/{id}")]
+        public async Task<ActionResult<IEnumerable<LoanDto>>> GetLoanCustomer(int id)
+        {
+            var loan = await _loanService.GetLoanByCustomerIdAsync(id);
+            if (loan == null) return NotFound();
+            return Ok(loan);
+        }
+
         [HttpGet("{id}/balance")]
         public async Task<ActionResult<decimal>> GetLoanBalance(int id)
         {

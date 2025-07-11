@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LoanService } from '../../services/loan';
 import { Loan } from '../../models/loan';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-loan-list',
   templateUrl: './loan-list.html',
   styleUrls: ['./loan-list.css'],
   standalone: false,
+  providers:[CommonModule]
 })
 export class LoanListComponent implements OnInit {
   loans: Loan[] = [];

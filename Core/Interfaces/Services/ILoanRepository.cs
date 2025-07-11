@@ -7,5 +7,6 @@ namespace Core.Interfaces.Services
         Task<IEnumerable<Loan>> GetAllLoansAsync();
         Task<Loan> GetLoanByIdAsync(int id);
         Task<decimal> GetLoanBalanceAsync(int id);
+        Task<IEnumerable<Loan>> GetLoanByCustomerIdAsync(int id);
     }
 }

@@ -1,9 +1,9 @@
 import { LoanProduct } from './loan-product';
 
 export interface Loan {
-  loanId: number;
+  loanID: number;
   applicationId: number;
-  customerId: number;
+  customerID: number;
   loanProductId: number;
   approvedAmount: number;
   disbursementDate: string;

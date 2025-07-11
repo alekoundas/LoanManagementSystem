@@ -5,7 +5,9 @@ import { Loan } from '../models/loan';
 
 @Injectable()
 export class LoanService {
-  private apiUrl = API_URL.loans;
+  // private apiUrl = API_URL.loans;
+  private apiUrl = "https://localhost:44343/api/loans";
+
 
   constructor(private http: HttpClient) {}
 

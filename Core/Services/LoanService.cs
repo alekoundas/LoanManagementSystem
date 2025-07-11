@@ -1,4 +1,5 @@
 ﻿using Core.DTOs;
+using Core.Entities;
 using Core.Interfaces.Services;
 using System.Net.Http.Json;
 
@@ -48,6 +49,24 @@ namespace Core.Services
                 CurrentBalance = loan.CurrentBalance,
                 LoanStatus = loan.LoanStatus
             };
+        }
+        public async Task<IEnumerable<LoanDto>> GetLoanByCustomerIdAsync(int id)
+        {
+            var loans = await _loanRepository.GetLoanByCustomerIdAsync(id);
+            if (loans == null) return null;
+
+            return loans.Select(l => new LoanDto
+            {
+                LoanID = l.LoanID,
+                CustomerID = l.CustomerID,
+                LoanProductID = l.LoanProductID,
+                ApprovedAmount = l.ApprovedAmount,
+                DisbursementDate = l.DisbursementDate,
+                MaturityDate = l.MaturityDate,
+                InterestRate = l.InterestRate,
+                CurrentBalance = l.CurrentBalance,
+                LoanStatus = l.LoanStatus
+            });
         }
 
         public async Task<decimal> GetLoanBalanceAsync(int id)

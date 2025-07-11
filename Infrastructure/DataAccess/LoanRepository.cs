@@ -33,6 +33,24 @@ namespace Infrastructure.DataAccess
             return loans;
         }
 
+        public async Task<IEnumerable<Loan>> GetLoanByCustomerIdAsync(int id)
+        {
+            var loans = new List<Loan>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                var command = new SqlCommand("SELECT * FROM CoreLoan.Loans", connection);
+                using (var reader = await command.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        loans.Add(MapLoan(reader));
+                    }
+                }
+            }
+            return loans;
+        }
+
         public async Task<Loan> GetLoanByIdAsync(int id)
         {
             using (var connection = new SqlConnection(_connectionString))

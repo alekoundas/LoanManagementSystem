@@ -22,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     CustomersRoutingModule,
     FormsModule,
     DatePipe,
-    CommonModule,ReactiveFormsModule,
+    CommonModule,
+    ReactiveFormsModule,
     HttpClientModule,
   ],
   exports: [
