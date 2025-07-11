@@ -9,42 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { LoggingInterceptor } from './interceptors/logging-interceptor';
 import { ErrorInterceptor } from './interceptors/error-interceptor';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { LoansModule } from './loans/loans-module';
 import { CustomersModule } from './customers/customers-module';
-
-// @NgModule({
-//   declarations:[
-//     // RouterOutlet,
-//     AppComponent,
-//   ],
-//   imports: [
-//     // AppComponent,
-//     CommonModule,
-//     AppRoutingModule,
-//     FormsModule,
-//     DatePipe,
-//     CurrencyPipe,
-//     LoansModule,
-//     CustomersModule,
-//     HomeComponent,
-//     PageNotFoundComponent,
-//     BrowserModule,
-//     HttpClientModule,
-//     // RouterOutlet,
-//   ],
-//   providers: [
-//     { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
-//     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-//     RouterOutlet
-//     // ,AppComponent
-
-//   ],
-//   bootstrap: [AppComponent]
-// })
-// export class AppModule {}
-
-
 
 @NgModule({
   declarations: [
@@ -59,7 +26,6 @@ import { CustomersModule } from './customers/customers-module';
     FormsModule,
     AppRoutingModule,
     LoansModule,
-    // CurrencyPipe,
     CustomersModule
   ],
   providers: [

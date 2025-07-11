@@ -17,14 +17,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./loans/loans-module').then((m) => m.LoansModule),
   },
-  { path: 'admin', component: HomeComponent, canActivate: [AuthGuard] }, // Using HomeComponent as placeholder
+  { path: 'admin', component: HomeComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
-  // imports: [RouterModule.forRoot(routes), CommonModule],
-  imports: [RouterModule.forRoot(routes, { enableTracing: true }), CommonModule],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true }), CommonModule], //enableTracing: Logging enable/disable
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
