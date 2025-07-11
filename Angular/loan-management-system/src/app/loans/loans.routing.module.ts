@@ -16,3 +16,16 @@ const routes: Routes = [
   declarations: [LoanDetailsComponent, LoanListComponent],
 })
 export class LoansRoutingModule {}
+
+
+// const routes: Routes = [
+//   { path: '', component: LoanListComponent },
+//   { path: 'customer/:id', component: LoanListComponent },
+//   { path: ':loanId/details', component: LoanDetailsComponent },
+// ];
+
+// @NgModule({
+//   imports: [RouterModule.forChild(routes)],
+//   exports: [RouterModule],
+// })
+// export class LoansRoutingModule {}

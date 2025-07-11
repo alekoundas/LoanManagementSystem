@@ -5,7 +5,7 @@ import { Customer } from '../models/customer';
 
 @Injectable()
 export class CustomerService {
-  private apiUrl = 'https://localhost:44343/api/customers'; // AFS Use Correct Port Here
+  private apiUrl = 'https://localhost:44343/api/customers';
 
   constructor(private http: HttpClient) {}
 

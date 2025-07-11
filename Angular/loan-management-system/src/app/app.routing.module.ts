@@ -23,7 +23,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), CommonModule],
+  // imports: [RouterModule.forRoot(routes), CommonModule],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true }), CommonModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

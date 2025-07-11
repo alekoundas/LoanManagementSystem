@@ -6,7 +6,7 @@ import { LoanApplication } from '../models/loan-application';
 
 @Injectable()
 export class LoanApplicationService {
-  private apiUrl = 'http://localhost:44343api/loan-applications'; // AFS Use Correct Port Here
+  private apiUrl = API_URL.loanApplications;
 
   constructor(private http: HttpClient) {}
 

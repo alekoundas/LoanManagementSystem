@@ -9,32 +9,63 @@ import { FormsModule } from '@angular/forms';
 import { LoggingInterceptor } from './interceptors/logging-interceptor';
 import { ErrorInterceptor } from './interceptors/error-interceptor';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { LoansModule } from './loans/loans-module';
 import { CustomersModule } from './customers/customers-module';
-import { SearchBarComponent } from './customers/search-bar/search-bar';
-import { CustomerService } from './services/customer';
-import { RouterOutlet } from '@angular/router';
+
+// @NgModule({
+//   declarations:[
+//     // RouterOutlet,
+//     AppComponent,
+//   ],
+//   imports: [
+//     // AppComponent,
+//     CommonModule,
+//     AppRoutingModule,
+//     FormsModule,
+//     DatePipe,
+//     CurrencyPipe,
+//     LoansModule,
+//     CustomersModule,
+//     HomeComponent,
+//     PageNotFoundComponent,
+//     BrowserModule,
+//     HttpClientModule,
+//     // RouterOutlet,
+//   ],
+//   providers: [
+//     { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
+//     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+//     RouterOutlet
+//     // ,AppComponent
+
+//   ],
+//   bootstrap: [AppComponent]
+// })
+// export class AppModule {}
+
+
 
 @NgModule({
-  imports: [
+  declarations: [
     AppComponent,
-    CommonModule,
-    AppRoutingModule,
-    FormsModule,
-    DatePipe,
-    CurrencyPipe,
-    LoansModule,
-    CustomersModule,
     HomeComponent,
     PageNotFoundComponent,
+  ],
+  imports: [
     BrowserModule,
+    CommonModule,
     HttpClientModule,
-    RouterOutlet,
+    FormsModule,
+    AppRoutingModule,
+    LoansModule,
+    // CurrencyPipe,
+    CustomersModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

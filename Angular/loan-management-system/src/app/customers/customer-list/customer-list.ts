@@ -62,10 +62,6 @@ export class CustomerListComponent implements OnInit {
   }
 
   public onSearch(term: string): void {
-    this.filteredCustomers = this.customers.filter((customer) =>
-      `${customer.firstName} ${customer.lastName}`
-        .toLowerCase()
-        .includes(term.toLowerCase())
-    );
+    this.filteredCustomers = this.customers.filter((customer) =>customer.fullName.toLowerCase().includes(term.toLowerCase()));
   }
 }

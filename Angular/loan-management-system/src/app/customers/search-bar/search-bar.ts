@@ -9,7 +9,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
   standalone: false,
 })
 export class SearchBarComponent {
-  public searchControl = new FormControl('');
+  public searchControl = new FormControl();
   @Output() search = new EventEmitter<string>();
 
   constructor() {
